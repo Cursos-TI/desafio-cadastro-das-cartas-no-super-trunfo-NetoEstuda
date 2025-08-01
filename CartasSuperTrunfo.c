@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h> //Recomendação da IA para melhoria de código.
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
@@ -29,7 +29,7 @@ int main() {
     getchar(); //getchar foi necessário para limpar o buffer. Caso contrário não conseguiria trabalhar com fgets
     printf("Informe o nome da cidade: (sem acentos)\n");
     fgets(nome_cidade1, 87, stdin); //Utilizei fgets pelo fato de não conseguir trabalhar com espaços em scanf
-    
+    nome_cidade1[strcspn(nome_cidade1, "\n")] = '\0'; // Trata o fgets removendo o \n na hora de imprimir os resultados
     
     printf("Informe a população da cidade: \n");
     scanf("%i", &populacao1);
@@ -57,6 +57,7 @@ int main() {
     getchar();
     printf("Informe o nome da cidade: (sem acentos)\n");
     fgets(nome_cidade2, 87, stdin);
+    nome_cidade2[strcspn(nome_cidade2, "\n")] = '\0';
 
     printf("Informe a população da cidade: \n");
     scanf("%i", &populacao2);
@@ -71,10 +72,10 @@ int main() {
     scanf("%i", &ponto_turistico2);
     
     // Exibição dos Dados das Cartas:
-    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %sPopulação: %i\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n",
+    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n",
          estado1, codigo_carta1, nome_cidade1, populacao1, area1, pib1, ponto_turistico1);
 
-    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %sPopulação: %i\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n",
+    printf("Carta 2: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %i\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\n\n",
          estado2, codigo_carta2, nome_cidade2, populacao2, area2, pib2, ponto_turistico2);
     return 0;
 }
