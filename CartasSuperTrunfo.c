@@ -102,10 +102,10 @@ int main() {
 
     
     // Exibição dos Dados das Cartas:
-    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
+    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: R$%.2f\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
          estado1, codigo_carta1, nome_cidade1, populacao1, area1, pib1, ponto_turistico1, densidade_pop1, pib_per_capita1, super_poder1);
 
-    printf("Carta 2: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
+    printf("Carta 2: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: R$%.2f\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
          estado2, codigo_carta2, nome_cidade2, populacao2, area2, pib2, ponto_turistico2, densidade_pop2, pib_per_capita2, super_poder2);
 
     printf("LEGENDA:\n1 = Vitória da Carta 1\n0 = Vitória da Carta 2\n\n"); //Adicionei uma legenda para facilitar o entendimento
