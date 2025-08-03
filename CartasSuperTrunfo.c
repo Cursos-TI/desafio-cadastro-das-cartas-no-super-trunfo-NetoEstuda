@@ -14,11 +14,11 @@ int main() {
     char nome_cidade1[87], nome_cidade2[87]; // O mais longo nome de cidade possui 85 letras.
     unsigned long int populacao1, populacao2;
     float area1, area2; 
-    double pib1, pib2; // Troquei por double pela utilização do PIB completo
+    float pib1, pib2; 
     int ponto_turistico1, ponto_turistico2;
     float densidade_pop1, densidade_pop2;
     float pib_per_capita1, pib_per_capita2;
-    double super_poder1, super_poder2; // Deixei double pelo grande número
+    float super_poder1, super_poder2;
     int resultado_população;
     int resultado_area;
     int resultado_pib;
@@ -48,14 +48,14 @@ int main() {
     scanf("%f", &area1);
 
     printf("Informe o PIB da cidade (completo): \n");
-    scanf("%lf", &pib1);
+    scanf("%f", &pib1);
 
     printf("Informe o número de pontos turísticos: \n");
     scanf("%i", &ponto_turistico1);
 
     densidade_pop1 = (float) populacao1 / area1; 
     pib_per_capita1 = (float) pib1 / populacao1;
-    super_poder1 = (double) populacao1 + area1 + pib1 + ponto_turistico1 + pib_per_capita1 - densidade_pop1;
+    super_poder1 = (float) populacao1 + area1 + pib1 + ponto_turistico1 + pib_per_capita1 + (1.0/densidade_pop1);
 
 // A PARTIR DAQUI SERÁ O CADASTRO DA SEGUNDA CARTA
 
@@ -80,14 +80,14 @@ int main() {
     scanf("%f", &area2);
 
     printf("Informe o PIB da cidade (completo): \n");
-    scanf("%lf", &pib2);
+    scanf("%f", &pib2);
 
     printf("Informe o número de pontos turísticos: \n");
     scanf("%i", &ponto_turistico2);
 
     densidade_pop2 = (float) populacao2 / area2;
-    pib_per_capita2 = (double) pib2 / populacao2;
-    super_poder2 = (double) populacao2 + area2 + pib2 + ponto_turistico2 + pib_per_capita2 - densidade_pop2;
+    pib_per_capita2 = (float) pib2 / populacao2;
+    super_poder2 = (float) populacao2 + area2 + pib2 + ponto_turistico2 + pib_per_capita2 + (1.0/densidade_pop2);
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------
     //Comparativos. Criei uma variável para cada comparação
@@ -102,16 +102,16 @@ int main() {
 
     
     // Exibição dos Dados das Cartas:
-    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2lf Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2lf\n\n",
-         estado1, codigo_carta1, nome_cidade1, populacao1, area1, pib1, ponto_turistico1, densidade_pop1, pib_per_capita1);
+    printf("Carta 1: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
+         estado1, codigo_carta1, nome_cidade1, populacao1, area1, pib1, ponto_turistico1, densidade_pop1, pib_per_capita1, super_poder1);
 
-    printf("Carta 2: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2lf Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2lf\n\n",
-         estado2, codigo_carta2, nome_cidade2, populacao2, area2, pib2, ponto_turistico2, densidade_pop2, pib_per_capita2);
+    printf("Carta 2: \nEstado: %c\nCódigo: %s \nNome da Cidade: %s\nPopulação: %lu\nÁrea: %.2fKm²\nPIB: %.2f Bilhões de reais\nNúmero de Pontos Turísticos: %i\nDensidade Populacional: %.2f\nPIB per Capita: %.2f\nSuper Poder: %.2f\n\n",
+         estado2, codigo_carta2, nome_cidade2, populacao2, area2, pib2, ponto_turistico2, densidade_pop2, pib_per_capita2, super_poder2);
 
     printf("LEGENDA:\n1 = Vitória da Carta 1\n0 = Vitória da Carta 2\n\n"); //Adicionei uma legenda para facilitar o entendimento
 
     // Aqui é apresentado o resultado de cada comparativo
-    printf("Comparação das cartas: \nPopulação: %d\nÁrea: %d\nPIB: %d\nPonto Turístico: %d\nDensidade: %d\nPIB per Capita: %d\nSuper Poder: %d", 
+    printf("Comparação das cartas: \nPopulação: %d\nÁrea: %d\nPIB: %d\nPonto Turístico: %d\nDensidade: %d\nPIB per Capita: %d\nSuper Poder: %d\n", 
         resultado_população, resultado_area, resultado_pib, resultado_ponto_turistico, resultado_densidade, resultado_pib_per_capita, resultado_super_poder);
     
     return 0;
